@@ -1,7 +1,7 @@
-
+//api key set up
 let api_key = "SzJT9rMVM1caktWPqH0sEhmSMHxtuYMgKEGoALPb";
 
-
+//used static dates to ensure the right about of photos to make world look animated
 async function fetch_epic(user_date) {
   let epic_url = `https://api.nasa.gov/EPIC/api/enhanced/date/2024-05-02?api_key=${api_key}`;
   let response = await fetch(epic_url)
@@ -33,11 +33,10 @@ async function fetch_epic(user_date) {
     document.getElementById("img22").src = img_url + response[21].image + img_type;
 
 }
-
-
+//initializing index value
 let slideIndex = 0;
 showSlides();
-
+//creating the slide function at a faster rate
 function showSlides() {
     let i;
     let slides = document.getElementsByClassName("mySlides");
@@ -49,17 +48,10 @@ function showSlides() {
     slides[slideIndex-1].style.display = "block"; 
     setTimeout(showSlides, 125); 
 }
-
-console.log("nasa logic is loaded")
-//APOD
-// from config import nasa_api_key
-
+//used previous code
 let url = "https://api.nasa.gov/planetary/apod?api_key=";
-
 let date_default = "&date="
 let user_date = "2024-05-02"
-
-
 
 async function fetch_data(user_date) {
   let date_url = date_default + user_date
@@ -67,8 +59,4 @@ async function fetch_data(user_date) {
   response = await response.json()
   await fetch_epic(user_date)
 }
-
-
-
 fetch_data(user_date)
-

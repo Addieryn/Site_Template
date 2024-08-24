@@ -1,8 +1,8 @@
 
-
+//storing API key
 let api_key2 = "SzJT9rMVM1caktWPqH0sEhmSMHxtuYMgKEGoALPb";
 
-
+//creating a function that allows us to fetch EPIC photo data using other fetch funtion for date selection
 async function fetch_epic(selected_date) {
   let epic_url = `https://api.nasa.gov/EPIC/api/natural/date/${selected_date}?api_key=${api_key2}`;
   let response = await fetch(epic_url)
@@ -15,13 +15,11 @@ async function fetch_epic(selected_date) {
     document.getElementById("img2").src = img_url + response[2].image + img_type;
     document.getElementById("img3").src = img_url + response[5].image + img_type;
     document.getElementById("img4").src = img_url + response[8].image + img_type;
-
 }
-
-
+//initializing index value
 let slideIndex = 0;
 showSlides();
-
+//creating a function to loop through selected photos
 function showSlides() {
     let i;
     let slides = document.getElementsByClassName("mySlides");
@@ -31,5 +29,5 @@ function showSlides() {
     slideIndex++;
     if (slideIndex> slides.length) {slideIndex = 1} 
     slides[slideIndex-1].style.display = "block"; 
-    setTimeout(showSlides, 500); // Change image every 2 seconds
+    setTimeout(showSlides, 500); 
 }

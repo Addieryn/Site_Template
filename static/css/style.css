@@ -1,4 +1,4 @@
-/*style.css */
+/*style.css suggested with nasa api's though didnt utilize */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
     :root{
      font-family: 'Montserrat', sans-serif;
@@ -6,7 +6,7 @@
     }
     body{
      margin: 0;
-     background-color: black;
+     background-color: blue;
      color: black;
     }
     header{
